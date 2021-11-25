@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Aplicación Ortesis</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="/js/ortesis.js"></script>
+       
+    </head>
+    <body>
+        
+        <div class="container">
+            <h1>Ortesis</h1>
+            <button type="button" class="btn btn-success" onclick="nuevoOrtesis()">Nuevo Producto</button>
+            <a class="btn btn-primary" href="index.html" role="button">Regresar al Menú</a>
+
+            <div id="tablaOrtesis"></div>
+
+
+            <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalProducto">Titulo</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="id" class="form-label">ID</label>
+                                    <input type="text" class="form-control" id="id" placeholder="Id del producto" disabled>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="name" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Nombre *" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="brand" class="form-label">Marca</label>
+                                    <input type="text" class="form-control" id="brand" placeholder="Marca" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="year" class="form-label">Año</label>
+                                    <input type="number" class="form-control" id="year" placeholder="Año" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="description" class="form-label">Descripcion</label>
+                                    <input type="text" class="form-control" id="description" placeholder="Descripción *" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="categoria" class="form-label">Categoria</label>
+                                    <div id="categoria-select"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="guardarCambiosO()">Guardar</button>
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalProducto">Mensaje</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p id="mensaje">
+
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModalMensaje()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </body>
+
+</html>

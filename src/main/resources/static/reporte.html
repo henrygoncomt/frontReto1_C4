@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Aplicación Ortesis</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="js/reportes.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Reportes</h1>
+            <hr>
+            <p id="display-time">
+                <script>
+                    function myFunc()  {
+                    var mydate=new Date();
+                    var year=mydate.getYear();
+                    if (year < 1000)
+                      year+=1900;
+                      var day=mydate.getDay();
+                      var month=mydate.getMonth()+1;
+                      if (month<10)
+                       month="0"+month;
+                       var daym=mydate.getDate();
+                       if (daym<10)
+                        daym="0"+daym;       
+                    
+                    var now = new Date()           
+                    var fechahora = "Fecha: " + daym + "/" + month + "/" +year + " - Hora: " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+                    document.getElementById('display-time').innerHTML = fechahora;
+                }
+                setInterval(myFunc, 1000);
+                </script>
+            </p>
+            
+            
+            <button type="button" class="btn btn-danger" onclick="traerReporteStatus()">Status Reservas</button>
+            <button type="button" class="btn btn-danger" onclick="traerReporteClientes()">Clientes y reservas</button>
+            <br><br>
+            
+            <label for="datei" class="form-label">Fecha Inicial</label>
+            <input type="date" id="RstarDate" placeholder="descripcion">
+            <br>
+            <label for="datei" class="form-label">Fecha Final..</label>
+            <input type="date" id="RdevolutionDate" placeholder="descripcion">
+            <button type="button" class="btn btn-danger" onclick="traerReporteDate()">Reporte por fecha </button>
+            <br><br>
+            <a class="btn btn-primary" href="index.html" role="button">Regresar al Menú</a>
+            <br><br>
+            <h3>Resultados</h3>
+            <div id="resultadoReporte"></div>
+            
+        </div>
+
+
+        <!-- modal de mensaje de confirmacion -->
+        <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModalMensaje">Mensaje</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="mensaje">
+
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="cerrarModalMensaje()">Cerrar</button>
+                    </div>
+                </div>
+            </div>        
+        </div>    
+        <!-- fin del modal de mensaje de confirmacion -->
+    </body>
+</html>
+

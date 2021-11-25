@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Aplicación Ortesis</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/style/miestilo.css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container authenticated" style="display:none">
+
+            <div class='row' style='height:90px;align-items: center;'>
+                <div class='col-xs-6 col-lg-2' >
+                    <img src="" id="avatar" height="50">
+                </div>
+                <div class='col-xs-6 col-lg-10' >
+                    Hola <span id="user"></span><br/>
+                    [<span id="username"></span>]
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Menu de la Aplicación Ciclo 3 - G26 Ortesis</h3>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-primary">
+                        <div class="inner">
+                            <h3>Categorias</h3>
+                            <p>Categorias de Ortesis</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-clipboard-list" aria-hidden="true"></i>
+                        </div>
+                        <a href="categoria.html" class="card-box-footer">Ver Mas <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-green">
+                        <div class="inner">
+                            <h3>Órtesis</h3>
+                            <p>Datos de Ortesis</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-list" aria-hidden="true"></i>
+                        </div>
+                        <a href="ortesis.html" class="card-box-footer">Ver Mas <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-success">
+                        <div class="inner">
+                            <h3>Clientes</h3>
+                            <p>Información de Clientes</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-address-card" aria-hidden="true"></i>
+                        </div>
+                        <a href="cliente.html" class="card-box-footer">Ver Mas <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-warning">
+                        <div class="inner">
+                            <h3>Mensajes</h3>
+                            <p>Servicio de Mensajes</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-address-book" aria-hidden="true"></i>
+                        </div>
+                        <a href="mensaje.html" class="card-box-footer">Ver Mas <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-info">
+                        <div class="inner">
+                            <h3>Reservas</h3>
+                            <p>Información de Reservas</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-calendar-alt" aria-hidden="true"></i>
+                        </div>
+                        <a href="reserva.html" class="card-box-footer">Ver Mas <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-danger">
+                        <div class="inner">
+                            <h3> Reportes </h3>
+                            <p> Informes de Ventas </p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-copy"></i>
+                        </div>
+                        <a href="reporte.html" class="card-box-footer">Ver Mas <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-box bg-dark">
+                        <div class="inner">
+                            <h3>Administradores</h3>
+                            <p>Pagina Administradores</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <a href="administrador.html" class="card-box-footer">Ver Mas <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <br/><br/><br/>
+            <p id="display-time">
+                <script>
+                    function myFunc()  {
+                    var mydate=new Date();
+                    var year=mydate.getYear();
+                    if (year < 1000)
+                    year+=1900;
+                    var day=mydate.getDay();
+                    var month=mydate.getMonth()+1;
+                    if (month<10)
+                    month="0"+month;
+                    var daym=mydate.getDate();
+                    if (daym<10)
+                    daym="0"+daym;       
+
+                    var now = new Date()           
+                    var fechahora = "Fecha: " + daym + "/" + month + "/" +year + " - Hora: " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+                    document.getElementById('display-time').innerHTML = fechahora;
+                    }
+                    setInterval(myFunc, 1000);
+                </script>
+            </p>
+            <hr/>
+
+            <div>
+                <button onClick="logout()" class="btn btn-primary">Logout</button>
+            </div>
+        </div>
+    </body>
+</html>

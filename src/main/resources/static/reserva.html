@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Aplicación Ortesis</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="/js/reserva.js"></script>
+    </head>
+    <body>
+        <!--Campos Reserva
+        Integer idReservation
+        Date startDate
+        Date devolutionDate
+        String status="created -->
+
+        <div class="container">
+            <h1>Reservas</h1>
+
+            <button type="button" class="btn btn-info" onclick="nuevoRs()">Nueva Reserva</button>
+            <a class="btn btn-primary" href="index.html" role="button">Regresar al Menú</a>
+            <div id="tablaReserva"></div>
+        </div>
+
+        <!-- Modal para el formulario de guardar o actualizar -->
+        <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModalReserva">Titulo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                    <label for="idReservation" class="form-label">ID</label>
+                                    <input type="number" class="form-control" id="idReservation" placeholder="Id de Reservacion" disabled>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="startDate" class="form-label">Fecha Inicio</label>
+                                <input type="date" id="startDate" placeholder="Inicio">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">     
+                                <label for="devolutionDate" class="form-label">Fecha Entrega</label>
+                                <input type="date" id="devolutionDate" placeholder="Entrega">
+                            </div>    
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="cliente" class="form-label">Clientes</label>
+                                <div id="cliente-select"></div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="ortesis" class="form-label">Ortesis</label>
+                                <div id="ortesis-select"></div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                    <label for="status" class="form-label">Estado</label>
+                                    <div id="status-select"></div>
+                                    
+                                </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="guardarCambiosRs()">Guardar</button>
+                        <button type="button" class="btn btn-secondary" onclick="cerrarModalRs()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fin del modal de formulario -->
+        <!-- modal de mensaje de confirmacion -->
+        <div class="modal fade" id="modalMensajeRs" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModalReserva">Mensaje</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="mensajeRs">
+
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="cerrarModalMensaje()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fin del modal de mensaje de confirmacion -->
+
+    </body>
+</html>

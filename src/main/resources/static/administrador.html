@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Aplicación Ortesis</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="/js/administrador.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Administradores</h1>
+
+            <button type="button" class="btn btn-success" onclick="nuevoAd()">Nuevo Administrador</button>
+            <a class="btn btn-primary" href="index.html" role="button">Regresar al Menú</a>
+            <div id="tabla"></div>
+        </div>
+        
+        <!-- Modal para el formulario de guardar o actualizar -->
+            <div class="modal fade" id="modalAdministrador" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalAdministrador">Titulo</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="id" class="form-label">ID</label>
+                                    <input type="text" class="form-control" id="id" placeholder="Id de Cliente" disabled>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de Cliente" required="required">
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="correo" class="form-label">Correo</label>
+                                    <input type="text" class="form-control" id="correo" placeholder="Correo" required>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="guardarCambiosAd()">Guardar</button>
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del modal de formulario -->
+            <!-- modal de mensaje de confirmacion -->
+            <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalMensaje">Mensaje</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p id="mensaje">
+                                
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModalMensaje()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del modal de mensaje de confirmacion -->
+
+    </body>
+</html>
